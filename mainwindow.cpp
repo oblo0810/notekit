@@ -396,6 +396,7 @@ void CMainWindow::RunPreferenceDiag()
 	config_builder->get_widget("preferences",dlg); 
 	Gtk::CheckButton *use_headerbar, *use_highlight_proxy, *use_classic_sidebar;
 	config_builder->get_widget("base_path",dir); 
+	// config_builder->get_widget("font", )
 	config_builder->get_widget("use_headerbar",use_headerbar);
 	config_builder->get_widget("use_highlight_proxy",use_highlight_proxy);
 	config_builder->get_widget("use_classic_sidebar", use_classic_sidebar);
