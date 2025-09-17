@@ -212,6 +212,13 @@ CMainWindow::CMainWindow(const Glib::RefPtr<Gtk::Application>& app) : Gtk::Appli
 	SettingChange("active-document");
 	//}
 	
+	// Set the editor font to the last stored font.
+	auto stored_font = settings->get_string("editor-font");
+	if (!stored_font.empty()) {
+		std::cout << "Stored font: '" << stored_font << "'" << std::endl;
+		sview.override_font(Pango::FontDescription(stored_font));
+	}
+	
 	close_handler = this->signal_delete_event().connect( sigc::mem_fun(this, &CMainWindow::on_close) );
 	
 	signal_motion_notify_event().connect(sigc::mem_fun(this,&CMainWindow::on_motion_notify),false);
