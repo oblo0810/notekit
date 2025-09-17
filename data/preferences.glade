@@ -290,7 +290,7 @@ This increases startup time and may result in markdown rendering failing if &lt;
                 <property name="can-focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkFontButton" id="font_button">
+                  <object class="GtkFontButton" id="change_font">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <!-- <property name="action">select-font</property> -->

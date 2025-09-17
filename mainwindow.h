@@ -75,6 +75,7 @@ protected:
 	void CalculatePaths();
 	const gchar* InitializeSettings();
 	void RunPreferenceDiag();
+	void InitFontSelector(Gtk::FontButton* font_btn);
 
 	/* settings */
 	Glib::RefPtr<Gio::Settings> settings;

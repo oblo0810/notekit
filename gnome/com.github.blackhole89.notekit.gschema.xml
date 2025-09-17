@@ -33,6 +33,11 @@
 			<default>false</default>
 			<summary>If NoteKit should use the "classic" sidebar style, used upto the 8th Dec 2021 or a "slightly more theme-agnostic way".</summary>
 		</key>
+		<key name="editor-font" type="s">
+			<default>'Sans 12'</default>
+			<summary>Font for the editor</summary>
+			<description>The font family and size used in the editor, e.g. 'Sans 12'.</description>
+		</key>
 		<key name="colors" type="a(dddd)">
 			<default>[
 				(0.0,0.0,0.0,1.0),

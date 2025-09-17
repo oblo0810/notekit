@@ -395,11 +395,13 @@ void CMainWindow::RunPreferenceDiag()
 	Gtk::Dialog *dlg;
 	config_builder->get_widget("preferences",dlg); 
 	Gtk::CheckButton *use_headerbar, *use_highlight_proxy, *use_classic_sidebar;
+	Gtk::FontButton *change_font;
 	config_builder->get_widget("base_path",dir); 
-	// config_builder->get_widget("font", )
 	config_builder->get_widget("use_headerbar",use_headerbar);
 	config_builder->get_widget("use_highlight_proxy",use_highlight_proxy);
 	config_builder->get_widget("use_classic_sidebar", use_classic_sidebar);
+	config_builder->get_widget("change_font", change_font);
+	InitFontSelector(change_font);
 	dir->set_filename(settings->get_string("base-path"));
 	dir->signal_file_set().connect(sigc::mem_fun(this,&CMainWindow::UpdateBasePath));
 	settings->bind("csd", use_headerbar->property_active());
@@ -408,6 +410,25 @@ void CMainWindow::RunPreferenceDiag()
 
 	dlg->run();
 	dlg->hide();
+}
+
+void CMainWindow::InitFontSelector(Gtk::FontButton* font_btn) {
+    if (!font_btn) {
+        return;
+    }
+
+    // Set the button to the font stored in settings, if available
+    auto stored_font = settings->get_string("editor-font");
+    if (!stored_font.empty()) {
+        font_btn->set_font_name(stored_font.c_str());
+    }
+
+    // When the user picks a font, update settings and the editor view
+    font_btn->signal_font_set().connect([this, font_btn]() {
+        auto selected_font = font_btn->get_font_name();
+        settings->set_string("editor-font", selected_font);
+        sview.override_font(Pango::FontDescription(selected_font));
+    });
 }
 
 void CMainWindow::UpdateBasePath() {

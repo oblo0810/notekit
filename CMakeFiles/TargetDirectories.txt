@@ -1,8 +1,0 @@
-/home/oleboelling/Documents/Programming/notekit/CMakeFiles/schema.dir
-/home/oleboelling/Documents/Programming/notekit/CMakeFiles/notekit.dir
-/home/oleboelling/Documents/Programming/notekit/CMakeFiles/edit_cache.dir
-/home/oleboelling/Documents/Programming/notekit/CMakeFiles/rebuild_cache.dir
-/home/oleboelling/Documents/Programming/notekit/CMakeFiles/list_install_components.dir
-/home/oleboelling/Documents/Programming/notekit/CMakeFiles/install.dir
-/home/oleboelling/Documents/Programming/notekit/CMakeFiles/install/local.dir
-/home/oleboelling/Documents/Programming/notekit/CMakeFiles/install/strip.dir
